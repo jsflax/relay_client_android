@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize1">0.75sp</dimen>
+    <dimen name="margin1">0.75dp</dimen>
+    <dimen name="padding1">0.75dp</dimen>
+
+    <dimen name="textSize2">1.5sp</dimen>
+    <dimen name="margin2">1.5dp</dimen>
+    <dimen name="padding2">1.5dp</dimen>
+
+    <dimen name="textSize3">2.25sp</dimen>
+    <dimen name="margin3">2.25dp</dimen>
+    <dimen name="padding3">2.25dp</dimen>
+
+    <dimen name="textSize4">3.0sp</dimen>
+    <dimen name="margin4">3.0dp</dimen>
+    <dimen name="padding4">3.0dp</dimen>
+
+    <dimen name="textSize5">3.75sp</dimen>
+    <dimen name="margin5">3.75dp</dimen>
+    <dimen name="padding5">3.75dp</dimen>
+
+    <dimen name="textSize6">4.5sp</dimen>
+    <dimen name="margin6">4.5dp</dimen>
+    <dimen name="padding6">4.5dp</dimen>
+
+    <dimen name="textSize7">5.25sp</dimen>
+    <dimen name="margin7">5.25dp</dimen>
+    <dimen name="padding7">5.25dp</dimen>
+
+    <dimen name="textSize8">6.0sp</dimen>
+    <dimen name="margin8">6.0dp</dimen>
+    <dimen name="padding8">6.0dp</dimen>
+
+    <dimen name="textSize9">6.75sp</dimen>
+    <dimen name="margin9">6.75dp</dimen>
+    <dimen name="padding9">6.75dp</dimen>
+
+    <dimen name="textSize10">7.5sp</dimen>
+    <dimen name="margin10">7.5dp</dimen>
+    <dimen name="padding10">7.5dp</dimen>
+
+    <dimen name="textSize11">8.25sp</dimen>
+    <dimen name="margin11">8.25dp</dimen>
+    <dimen name="padding11">8.25dp</dimen>
+
+    <dimen name="textSize12">9.0sp</dimen>
+    <dimen name="margin12">9.0dp</dimen>
+    <dimen name="padding12">9.0dp</dimen>
+
+    <dimen name="textSize13">9.75sp</dimen>
+    <dimen name="margin13">9.75dp</dimen>
+    <dimen name="padding13">9.75dp</dimen>
+
+    <dimen name="textSize14">10.5sp</dimen>
+    <dimen name="margin14">10.5dp</dimen>
+    <dimen name="padding14">10.5dp</dimen>
+
+    <dimen name="textSize15">11.25sp</dimen>
+    <dimen name="margin15">11.25dp</dimen>
+    <dimen name="padding15">11.25dp</dimen>
+
+    <dimen name="textSize16">12.0sp</dimen>
+    <dimen name="margin16">12.0dp</dimen>
+    <dimen name="padding16">12.0dp</dimen>
+
+    <dimen name="textSize17">12.75sp</dimen>
+    <dimen name="margin17">12.75dp</dimen>
+    <dimen name="padding17">12.75dp</dimen>
+
+    <dimen name="textSize18">13.5sp</dimen>
+    <dimen name="margin18">13.5dp</dimen>
+    <dimen name="padding18">13.5dp</dimen>
+
+    <dimen name="textSize19">14.25sp</dimen>
+    <dimen name="margin19">14.25dp</dimen>
+    <dimen name="padding19">14.25dp</dimen>
+
+    <dimen name="textSize20">15.0sp</dimen>
+    <dimen name="margin20">15.0dp</dimen>
+    <dimen name="padding20">15.0dp</dimen>
+
+    <dimen name="textSize21">15.75sp</dimen>
+    <dimen name="margin21">15.75dp</dimen>
+    <dimen name="padding21">15.75dp</dimen>
+
+    <dimen name="textSize22">16.5sp</dimen>
+    <dimen name="margin22">16.5dp</dimen>
+    <dimen name="padding22">16.5dp</dimen>
+
+    <dimen name="textSize23">17.25sp</dimen>
+    <dimen name="margin23">17.25dp</dimen>
+    <dimen name="padding23">17.25dp</dimen>
+
+    <dimen name="textSize24">18.0sp</dimen>
+    <dimen name="margin24">18.0dp</dimen>
+    <dimen name="padding24">18.0dp</dimen>
+
+    <dimen name="textSize25">18.75sp</dimen>
+    <dimen name="margin25">18.75dp</dimen>
+    <dimen name="padding25">18.75dp</dimen>
+
+    <dimen name="textSize26">19.5sp</dimen>
+    <dimen name="margin26">19.5dp</dimen>
+    <dimen name="padding26">19.5dp</dimen>
+
+    <dimen name="textSize27">20.25sp</dimen>
+    <dimen name="margin27">20.25dp</dimen>
+    <dimen name="padding27">20.25dp</dimen>
+
+    <dimen name="textSize28">21.0sp</dimen>
+    <dimen name="margin28">21.0dp</dimen>
+    <dimen name="padding28">21.0dp</dimen>
+
+    <dimen name="textSize29">21.75sp</dimen>
+    <dimen name="margin29">21.75dp</dimen>
+    <dimen name="padding29">21.75dp</dimen>
+
+    <dimen name="textSize30">22.5sp</dimen>
+    <dimen name="margin30">22.5dp</dimen>
+    <dimen name="padding30">22.5dp</dimen>
+
+    <dimen name="textSize31">23.25sp</dimen>
+    <dimen name="margin31">23.25dp</dimen>
+    <dimen name="padding31">23.25dp</dimen>
+
+    <dimen name="textSize32">24.0sp</dimen>
+    <dimen name="margin32">24.0dp</dimen>
+    <dimen name="padding32">24.0dp</dimen>
+
+    <dimen name="textSize33">24.75sp</dimen>
+    <dimen name="margin33">24.75dp</dimen>
+    <dimen name="padding33">24.75dp</dimen>
+
+    <dimen name="textSize34">25.5sp</dimen>
+    <dimen name="margin34">25.5dp</dimen>
+    <dimen name="padding34">25.5dp</dimen>
+
+    <dimen name="textSize35">26.25sp</dimen>
+    <dimen name="margin35">26.25dp</dimen>
+    <dimen name="padding35">26.25dp</dimen>
+
+    <dimen name="textSize36">27.0sp</dimen>
+    <dimen name="margin36">27.0dp</dimen>
+    <dimen name="padding36">27.0dp</dimen>
+
+    <dimen name="textSize37">27.75sp</dimen>
+    <dimen name="margin37">27.75dp</dimen>
+    <dimen name="padding37">27.75dp</dimen>
+
+    <dimen name="textSize38">28.5sp</dimen>
+    <dimen name="margin38">28.5dp</dimen>
+    <dimen name="padding38">28.5dp</dimen>
+
+    <dimen name="textSize39">29.25sp</dimen>
+    <dimen name="margin39">29.25dp</dimen>
+    <dimen name="padding39">29.25dp</dimen>
+
+    <dimen name="textSize40">30.0sp</dimen>
+    <dimen name="margin40">30.0dp</dimen>
+    <dimen name="padding40">30.0dp</dimen>
+
+    <dimen name="textSize41">30.75sp</dimen>
+    <dimen name="margin41">30.75dp</dimen>
+    <dimen name="padding41">30.75dp</dimen>
+
+    <dimen name="textSize42">31.5sp</dimen>
+    <dimen name="margin42">31.5dp</dimen>
+    <dimen name="padding42">31.5dp</dimen>
+
+    <dimen name="textSize43">32.25sp</dimen>
+    <dimen name="margin43">32.25dp</dimen>
+    <dimen name="padding43">32.25dp</dimen>
+
+    <dimen name="textSize44">33.0sp</dimen>
+    <dimen name="margin44">33.0dp</dimen>
+    <dimen name="padding44">33.0dp</dimen>
+
+    <dimen name="textSize45">33.75sp</dimen>
+    <dimen name="margin45">33.75dp</dimen>
+    <dimen name="padding45">33.75dp</dimen>
+
+    <dimen name="textSize46">34.5sp</dimen>
+    <dimen name="margin46">34.5dp</dimen>
+    <dimen name="padding46">34.5dp</dimen>
+
+    <dimen name="textSize47">35.25sp</dimen>
+    <dimen name="margin47">35.25dp</dimen>
+    <dimen name="padding47">35.25dp</dimen>
+
+    <dimen name="textSize48">36.0sp</dimen>
+    <dimen name="margin48">36.0dp</dimen>
+    <dimen name="padding48">36.0dp</dimen>
+
+    <dimen name="textSize49">36.75sp</dimen>
+    <dimen name="margin49">36.75dp</dimen>
+    <dimen name="padding49">36.75dp</dimen>
+
+    <dimen name="textSize50">37.5sp</dimen>
+    <dimen name="margin50">37.5dp</dimen>
+    <dimen name="padding50">37.5dp</dimen>
+
+    <dimen name="textSize51">38.25sp</dimen>
+    <dimen name="margin51">38.25dp</dimen>
+    <dimen name="padding51">38.25dp</dimen>
+
+    <dimen name="textSize52">39.0sp</dimen>
+    <dimen name="margin52">39.0dp</dimen>
+    <dimen name="padding52">39.0dp</dimen>
+
+    <dimen name="textSize53">39.75sp</dimen>
+    <dimen name="margin53">39.75dp</dimen>
+    <dimen name="padding53">39.75dp</dimen>
+
+    <dimen name="textSize54">40.5sp</dimen>
+    <dimen name="margin54">40.5dp</dimen>
+    <dimen name="padding54">40.5dp</dimen>
+
+    <dimen name="textSize55">41.25sp</dimen>
+    <dimen name="margin55">41.25dp</dimen>
+    <dimen name="padding55">41.25dp</dimen>
+
+    <dimen name="textSize56">42.0sp</dimen>
+    <dimen name="margin56">42.0dp</dimen>
+    <dimen name="padding56">42.0dp</dimen>
+
+    <dimen name="textSize57">42.75sp</dimen>
+    <dimen name="margin57">42.75dp</dimen>
+    <dimen name="padding57">42.75dp</dimen>
+
+    <dimen name="textSize58">43.5sp</dimen>
+    <dimen name="margin58">43.5dp</dimen>
+    <dimen name="padding58">43.5dp</dimen>
+
+    <dimen name="textSize59">44.25sp</dimen>
+    <dimen name="margin59">44.25dp</dimen>
+    <dimen name="padding59">44.25dp</dimen>
+
+    <dimen name="textSize60">45.0sp</dimen>
+    <dimen name="margin60">45.0dp</dimen>
+    <dimen name="padding60">45.0dp</dimen>
+
+    <dimen name="textSize61">45.75sp</dimen>
+    <dimen name="margin61">45.75dp</dimen>
+    <dimen name="padding61">45.75dp</dimen>
+
+    <dimen name="textSize62">46.5sp</dimen>
+    <dimen name="margin62">46.5dp</dimen>
+    <dimen name="padding62">46.5dp</dimen>
+
+    <dimen name="textSize63">47.25sp</dimen>
+    <dimen name="margin63">47.25dp</dimen>
+    <dimen name="padding63">47.25dp</dimen>
+
+    <dimen name="textSize64">48.0sp</dimen>
+    <dimen name="margin64">48.0dp</dimen>
+    <dimen name="padding64">48.0dp</dimen>
+
+    <dimen name="textSize65">48.75sp</dimen>
+    <dimen name="margin65">48.75dp</dimen>
+    <dimen name="padding65">48.75dp</dimen>
+
+    <dimen name="textSize66">49.5sp</dimen>
+    <dimen name="margin66">49.5dp</dimen>
+    <dimen name="padding66">49.5dp</dimen>
+
+    <dimen name="textSize67">50.25sp</dimen>
+    <dimen name="margin67">50.25dp</dimen>
+    <dimen name="padding67">50.25dp</dimen>
+
+    <dimen name="textSize68">51.0sp</dimen>
+    <dimen name="margin68">51.0dp</dimen>
+    <dimen name="padding68">51.0dp</dimen>
+
+    <dimen name="textSize69">51.75sp</dimen>
+    <dimen name="margin69">51.75dp</dimen>
+    <dimen name="padding69">51.75dp</dimen>
+
+    <dimen name="textSize70">52.5sp</dimen>
+    <dimen name="margin70">52.5dp</dimen>
+    <dimen name="padding70">52.5dp</dimen>
+
+    <dimen name="textSize71">53.25sp</dimen>
+    <dimen name="margin71">53.25dp</dimen>
+    <dimen name="padding71">53.25dp</dimen>
+
+    <dimen name="textSize72">54.0sp</dimen>
+    <dimen name="margin72">54.0dp</dimen>
+    <dimen name="padding72">54.0dp</dimen>
+
+    <dimen name="textSize73">54.75sp</dimen>
+    <dimen name="margin73">54.75dp</dimen>
+    <dimen name="padding73">54.75dp</dimen>
+
+    <dimen name="textSize74">55.5sp</dimen>
+    <dimen name="margin74">55.5dp</dimen>
+    <dimen name="padding74">55.5dp</dimen>
+
+    <dimen name="textSize75">56.25sp</dimen>
+    <dimen name="margin75">56.25dp</dimen>
+    <dimen name="padding75">56.25dp</dimen>
+
+    <dimen name="textSize76">57.0sp</dimen>
+    <dimen name="margin76">57.0dp</dimen>
+    <dimen name="padding76">57.0dp</dimen>
+
+    <dimen name="textSize77">57.75sp</dimen>
+    <dimen name="margin77">57.75dp</dimen>
+    <dimen name="padding77">57.75dp</dimen>
+
+    <dimen name="textSize78">58.5sp</dimen>
+    <dimen name="margin78">58.5dp</dimen>
+    <dimen name="padding78">58.5dp</dimen>
+
+    <dimen name="textSize79">59.25sp</dimen>
+    <dimen name="margin79">59.25dp</dimen>
+    <dimen name="padding79">59.25dp</dimen>
+
+    <dimen name="textSize80">60.0sp</dimen>
+    <dimen name="margin80">60.0dp</dimen>
+    <dimen name="padding80">60.0dp</dimen>
+
+    <dimen name="textSize81">60.75sp</dimen>
+    <dimen name="margin81">60.75dp</dimen>
+    <dimen name="padding81">60.75dp</dimen>
+
+    <dimen name="textSize82">61.5sp</dimen>
+    <dimen name="margin82">61.5dp</dimen>
+    <dimen name="padding82">61.5dp</dimen>
+
+    <dimen name="textSize83">62.25sp</dimen>
+    <dimen name="margin83">62.25dp</dimen>
+    <dimen name="padding83">62.25dp</dimen>
+
+    <dimen name="textSize84">63.0sp</dimen>
+    <dimen name="margin84">63.0dp</dimen>
+    <dimen name="padding84">63.0dp</dimen>
+
+    <dimen name="textSize85">63.75sp</dimen>
+    <dimen name="margin85">63.75dp</dimen>
+    <dimen name="padding85">63.75dp</dimen>
+
+    <dimen name="textSize86">64.5sp</dimen>
+    <dimen name="margin86">64.5dp</dimen>
+    <dimen name="padding86">64.5dp</dimen>
+
+    <dimen name="textSize87">65.25sp</dimen>
+    <dimen name="margin87">65.25dp</dimen>
+    <dimen name="padding87">65.25dp</dimen>
+
+    <dimen name="textSize88">66.0sp</dimen>
+    <dimen name="margin88">66.0dp</dimen>
+    <dimen name="padding88">66.0dp</dimen>
+
+    <dimen name="textSize89">66.75sp</dimen>
+    <dimen name="margin89">66.75dp</dimen>
+    <dimen name="padding89">66.75dp</dimen>
+
+    <dimen name="textSize90">67.5sp</dimen>
+    <dimen name="margin90">67.5dp</dimen>
+    <dimen name="padding90">67.5dp</dimen>
+
+    <dimen name="textSize91">68.25sp</dimen>
+    <dimen name="margin91">68.25dp</dimen>
+    <dimen name="padding91">68.25dp</dimen>
+
+    <dimen name="textSize92">69.0sp</dimen>
+    <dimen name="margin92">69.0dp</dimen>
+    <dimen name="padding92">69.0dp</dimen>
+
+    <dimen name="textSize93">69.75sp</dimen>
+    <dimen name="margin93">69.75dp</dimen>
+    <dimen name="padding93">69.75dp</dimen>
+
+    <dimen name="textSize94">70.5sp</dimen>
+    <dimen name="margin94">70.5dp</dimen>
+    <dimen name="padding94">70.5dp</dimen>
+
+    <dimen name="textSize95">71.25sp</dimen>
+    <dimen name="margin95">71.25dp</dimen>
+    <dimen name="padding95">71.25dp</dimen>
+
+    <dimen name="textSize96">72.0sp</dimen>
+    <dimen name="margin96">72.0dp</dimen>
+    <dimen name="padding96">72.0dp</dimen>
+
+    <dimen name="textSize97">72.75sp</dimen>
+    <dimen name="margin97">72.75dp</dimen>
+    <dimen name="padding97">72.75dp</dimen>
+
+    <dimen name="textSize98">73.5sp</dimen>
+    <dimen name="margin98">73.5dp</dimen>
+    <dimen name="padding98">73.5dp</dimen>
+
+    <dimen name="textSize99">74.25sp</dimen>
+    <dimen name="margin99">74.25dp</dimen>
+    <dimen name="padding99">74.25dp</dimen>
+
+    <dimen name="textSize100">75.0sp</dimen>
+    <dimen name="margin100">75.0dp</dimen>
+    <dimen name="padding100">75.0dp</dimen>
+
+    <dimen name="textSize101">75.75sp</dimen>
+    <dimen name="margin101">75.75dp</dimen>
+    <dimen name="padding101">75.75dp</dimen>
+
+    <dimen name="textSize102">76.5sp</dimen>
+    <dimen name="margin102">76.5dp</dimen>
+    <dimen name="padding102">76.5dp</dimen>
+
+    <dimen name="textSize103">77.25sp</dimen>
+    <dimen name="margin103">77.25dp</dimen>
+    <dimen name="padding103">77.25dp</dimen>
+
+    <dimen name="textSize104">78.0sp</dimen>
+    <dimen name="margin104">78.0dp</dimen>
+    <dimen name="padding104">78.0dp</dimen>
+
+    <dimen name="textSize105">78.75sp</dimen>
+    <dimen name="margin105">78.75dp</dimen>
+    <dimen name="padding105">78.75dp</dimen>
+
+    <dimen name="textSize106">79.5sp</dimen>
+    <dimen name="margin106">79.5dp</dimen>
+    <dimen name="padding106">79.5dp</dimen>
+
+    <dimen name="textSize107">80.25sp</dimen>
+    <dimen name="margin107">80.25dp</dimen>
+    <dimen name="padding107">80.25dp</dimen>
+
+    <dimen name="textSize108">81.0sp</dimen>
+    <dimen name="margin108">81.0dp</dimen>
+    <dimen name="padding108">81.0dp</dimen>
+
+    <dimen name="textSize109">81.75sp</dimen>
+    <dimen name="margin109">81.75dp</dimen>
+    <dimen name="padding109">81.75dp</dimen>
+
+    <dimen name="textSize110">82.5sp</dimen>
+    <dimen name="margin110">82.5dp</dimen>
+    <dimen name="padding110">82.5dp</dimen>
+
+    <dimen name="textSize111">83.25sp</dimen>
+    <dimen name="margin111">83.25dp</dimen>
+    <dimen name="padding111">83.25dp</dimen>
+
+    <dimen name="textSize112">84.0sp</dimen>
+    <dimen name="margin112">84.0dp</dimen>
+    <dimen name="padding112">84.0dp</dimen>
+
+    <dimen name="textSize113">84.75sp</dimen>
+    <dimen name="margin113">84.75dp</dimen>
+    <dimen name="padding113">84.75dp</dimen>
+
+    <dimen name="textSize114">85.5sp</dimen>
+    <dimen name="margin114">85.5dp</dimen>
+    <dimen name="padding114">85.5dp</dimen>
+
+    <dimen name="textSize115">86.25sp</dimen>
+    <dimen name="margin115">86.25dp</dimen>
+    <dimen name="padding115">86.25dp</dimen>
+
+    <dimen name="textSize116">87.0sp</dimen>
+    <dimen name="margin116">87.0dp</dimen>
+    <dimen name="padding116">87.0dp</dimen>
+
+    <dimen name="textSize117">87.75sp</dimen>
+    <dimen name="margin117">87.75dp</dimen>
+    <dimen name="padding117">87.75dp</dimen>
+
+    <dimen name="textSize118">88.5sp</dimen>
+    <dimen name="margin118">88.5dp</dimen>
+    <dimen name="padding118">88.5dp</dimen>
+
+    <dimen name="textSize119">89.25sp</dimen>
+    <dimen name="margin119">89.25dp</dimen>
+    <dimen name="padding119">89.25dp</dimen>
+
+    <dimen name="textSize120">90.0sp</dimen>
+    <dimen name="margin120">90.0dp</dimen>
+    <dimen name="padding120">90.0dp</dimen>
+
+    <dimen name="textSize121">90.75sp</dimen>
+    <dimen name="margin121">90.75dp</dimen>
+    <dimen name="padding121">90.75dp</dimen>
+
+    <dimen name="textSize122">91.5sp</dimen>
+    <dimen name="margin122">91.5dp</dimen>
+    <dimen name="padding122">91.5dp</dimen>
+
+    <dimen name="textSize123">92.25sp</dimen>
+    <dimen name="margin123">92.25dp</dimen>
+    <dimen name="padding123">92.25dp</dimen>
+
+    <dimen name="textSize124">93.0sp</dimen>
+    <dimen name="margin124">93.0dp</dimen>
+    <dimen name="padding124">93.0dp</dimen>
+
+    <dimen name="textSize125">93.75sp</dimen>
+    <dimen name="margin125">93.75dp</dimen>
+    <dimen name="padding125">93.75dp</dimen>
+
+    <dimen name="textSize126">94.5sp</dimen>
+    <dimen name="margin126">94.5dp</dimen>
+    <dimen name="padding126">94.5dp</dimen>
+
+    <dimen name="textSize127">95.25sp</dimen>
+    <dimen name="margin127">95.25dp</dimen>
+    <dimen name="padding127">95.25dp</dimen>
+
+    <dimen name="textSize128">96.0sp</dimen>
+    <dimen name="margin128">96.0dp</dimen>
+    <dimen name="padding128">96.0dp</dimen>
+
+    <dimen name="textSize129">96.75sp</dimen>
+    <dimen name="margin129">96.75dp</dimen>
+    <dimen name="padding129">96.75dp</dimen>
+
+    <dimen name="textSize130">97.5sp</dimen>
+    <dimen name="margin130">97.5dp</dimen>
+    <dimen name="padding130">97.5dp</dimen>
+
+    <dimen name="textSize131">98.25sp</dimen>
+    <dimen name="margin131">98.25dp</dimen>
+    <dimen name="padding131">98.25dp</dimen>
+
+    <dimen name="textSize132">99.0sp</dimen>
+    <dimen name="margin132">99.0dp</dimen>
+    <dimen name="padding132">99.0dp</dimen>
+
+    <dimen name="textSize133">99.75sp</dimen>
+    <dimen name="margin133">99.75dp</dimen>
+    <dimen name="padding133">99.75dp</dimen>
+
+    <dimen name="textSize134">100.5sp</dimen>
+    <dimen name="margin134">100.5dp</dimen>
+    <dimen name="padding134">100.5dp</dimen>
+
+    <dimen name="textSize135">101.25sp</dimen>
+    <dimen name="margin135">101.25dp</dimen>
+    <dimen name="padding135">101.25dp</dimen>
+
+    <dimen name="textSize136">102.0sp</dimen>
+    <dimen name="margin136">102.0dp</dimen>
+    <dimen name="padding136">102.0dp</dimen>
+
+    <dimen name="textSize137">102.75sp</dimen>
+    <dimen name="margin137">102.75dp</dimen>
+    <dimen name="padding137">102.75dp</dimen>
+
+    <dimen name="textSize138">103.5sp</dimen>
+    <dimen name="margin138">103.5dp</dimen>
+    <dimen name="padding138">103.5dp</dimen>
+
+    <dimen name="textSize139">104.25sp</dimen>
+    <dimen name="margin139">104.25dp</dimen>
+    <dimen name="padding139">104.25dp</dimen>
+
+    <dimen name="textSize140">105.0sp</dimen>
+    <dimen name="margin140">105.0dp</dimen>
+    <dimen name="padding140">105.0dp</dimen>
+
+    <dimen name="textSize141">105.75sp</dimen>
+    <dimen name="margin141">105.75dp</dimen>
+    <dimen name="padding141">105.75dp</dimen>
+
+    <dimen name="textSize142">106.5sp</dimen>
+    <dimen name="margin142">106.5dp</dimen>
+    <dimen name="padding142">106.5dp</dimen>
+
+    <dimen name="textSize143">107.25sp</dimen>
+    <dimen name="margin143">107.25dp</dimen>
+    <dimen name="padding143">107.25dp</dimen>
+
+    <dimen name="textSize144">108.0sp</dimen>
+    <dimen name="margin144">108.0dp</dimen>
+    <dimen name="padding144">108.0dp</dimen>
+
+    <dimen name="textSize145">108.75sp</dimen>
+    <dimen name="margin145">108.75dp</dimen>
+    <dimen name="padding145">108.75dp</dimen>
+
+    <dimen name="textSize146">109.5sp</dimen>
+    <dimen name="margin146">109.5dp</dimen>
+    <dimen name="padding146">109.5dp</dimen>
+
+    <dimen name="textSize147">110.25sp</dimen>
+    <dimen name="margin147">110.25dp</dimen>
+    <dimen name="padding147">110.25dp</dimen>
+
+    <dimen name="textSize148">111.0sp</dimen>
+    <dimen name="margin148">111.0dp</dimen>
+    <dimen name="padding148">111.0dp</dimen>
+
+    <dimen name="textSize149">111.75sp</dimen>
+    <dimen name="margin149">111.75dp</dimen>
+    <dimen name="padding149">111.75dp</dimen>
+
+    <dimen name="textSize150">112.5sp</dimen>
+    <dimen name="margin150">112.5dp</dimen>
+    <dimen name="padding150">112.5dp</dimen>
+
+    <dimen name="textSize151">113.25sp</dimen>
+    <dimen name="margin151">113.25dp</dimen>
+    <dimen name="padding151">113.25dp</dimen>
+
+    <dimen name="textSize152">114.0sp</dimen>
+    <dimen name="margin152">114.0dp</dimen>
+    <dimen name="padding152">114.0dp</dimen>
+
+    <dimen name="textSize153">114.75sp</dimen>
+    <dimen name="margin153">114.75dp</dimen>
+    <dimen name="padding153">114.75dp</dimen>
+
+    <dimen name="textSize154">115.5sp</dimen>
+    <dimen name="margin154">115.5dp</dimen>
+    <dimen name="padding154">115.5dp</dimen>
+
+    <dimen name="textSize155">116.25sp</dimen>
+    <dimen name="margin155">116.25dp</dimen>
+    <dimen name="padding155">116.25dp</dimen>
+
+    <dimen name="textSize156">117.0sp</dimen>
+    <dimen name="margin156">117.0dp</dimen>
+    <dimen name="padding156">117.0dp</dimen>
+
+    <dimen name="textSize157">117.75sp</dimen>
+    <dimen name="margin157">117.75dp</dimen>
+    <dimen name="padding157">117.75dp</dimen>
+
+    <dimen name="textSize158">118.5sp</dimen>
+    <dimen name="margin158">118.5dp</dimen>
+    <dimen name="padding158">118.5dp</dimen>
+
+    <dimen name="textSize159">119.25sp</dimen>
+    <dimen name="margin159">119.25dp</dimen>
+    <dimen name="padding159">119.25dp</dimen>
+
+    <dimen name="textSize160">120.0sp</dimen>
+    <dimen name="margin160">120.0dp</dimen>
+    <dimen name="padding160">120.0dp</dimen>
+
+    <dimen name="textSize161">120.75sp</dimen>
+    <dimen name="margin161">120.75dp</dimen>
+    <dimen name="padding161">120.75dp</dimen>
+
+    <dimen name="textSize162">121.5sp</dimen>
+    <dimen name="margin162">121.5dp</dimen>
+    <dimen name="padding162">121.5dp</dimen>
+
+    <dimen name="textSize163">122.25sp</dimen>
+    <dimen name="margin163">122.25dp</dimen>
+    <dimen name="padding163">122.25dp</dimen>
+
+    <dimen name="textSize164">123.0sp</dimen>
+    <dimen name="margin164">123.0dp</dimen>
+    <dimen name="padding164">123.0dp</dimen>
+
+    <dimen name="textSize165">123.75sp</dimen>
+    <dimen name="margin165">123.75dp</dimen>
+    <dimen name="padding165">123.75dp</dimen>
+
+    <dimen name="textSize166">124.5sp</dimen>
+    <dimen name="margin166">124.5dp</dimen>
+    <dimen name="padding166">124.5dp</dimen>
+
+    <dimen name="textSize167">125.25sp</dimen>
+    <dimen name="margin167">125.25dp</dimen>
+    <dimen name="padding167">125.25dp</dimen>
+
+    <dimen name="textSize168">126.0sp</dimen>
+    <dimen name="margin168">126.0dp</dimen>
+    <dimen name="padding168">126.0dp</dimen>
+
+    <dimen name="textSize169">126.75sp</dimen>
+    <dimen name="margin169">126.75dp</dimen>
+    <dimen name="padding169">126.75dp</dimen>
+
+    <dimen name="textSize170">127.5sp</dimen>
+    <dimen name="margin170">127.5dp</dimen>
+    <dimen name="padding170">127.5dp</dimen>
+
+    <dimen name="textSize171">128.25sp</dimen>
+    <dimen name="margin171">128.25dp</dimen>
+    <dimen name="padding171">128.25dp</dimen>
+
+    <dimen name="textSize172">129.0sp</dimen>
+    <dimen name="margin172">129.0dp</dimen>
+    <dimen name="padding172">129.0dp</dimen>
+
+    <dimen name="textSize173">129.75sp</dimen>
+    <dimen name="margin173">129.75dp</dimen>
+    <dimen name="padding173">129.75dp</dimen>
+
+    <dimen name="textSize174">130.5sp</dimen>
+    <dimen name="margin174">130.5dp</dimen>
+    <dimen name="padding174">130.5dp</dimen>
+
+    <dimen name="textSize175">131.25sp</dimen>
+    <dimen name="margin175">131.25dp</dimen>
+    <dimen name="padding175">131.25dp</dimen>
+
+    <dimen name="textSize176">132.0sp</dimen>
+    <dimen name="margin176">132.0dp</dimen>
+    <dimen name="padding176">132.0dp</dimen>
+
+    <dimen name="textSize177">132.75sp</dimen>
+    <dimen name="margin177">132.75dp</dimen>
+    <dimen name="padding177">132.75dp</dimen>
+
+    <dimen name="textSize178">133.5sp</dimen>
+    <dimen name="margin178">133.5dp</dimen>
+    <dimen name="padding178">133.5dp</dimen>
+
+    <dimen name="textSize179">134.25sp</dimen>
+    <dimen name="margin179">134.25dp</dimen>
+    <dimen name="padding179">134.25dp</dimen>
+
+    <dimen name="textSize180">135.0sp</dimen>
+    <dimen name="margin180">135.0dp</dimen>
+    <dimen name="padding180">135.0dp</dimen>
+
+    <dimen name="textSize181">135.75sp</dimen>
+    <dimen name="margin181">135.75dp</dimen>
+    <dimen name="padding181">135.75dp</dimen>
+
+    <dimen name="textSize182">136.5sp</dimen>
+    <dimen name="margin182">136.5dp</dimen>
+    <dimen name="padding182">136.5dp</dimen>
+
+    <dimen name="textSize183">137.25sp</dimen>
+    <dimen name="margin183">137.25dp</dimen>
+    <dimen name="padding183">137.25dp</dimen>
+
+    <dimen name="textSize184">138.0sp</dimen>
+    <dimen name="margin184">138.0dp</dimen>
+    <dimen name="padding184">138.0dp</dimen>
+
+    <dimen name="textSize185">138.75sp</dimen>
+    <dimen name="margin185">138.75dp</dimen>
+    <dimen name="padding185">138.75dp</dimen>
+
+    <dimen name="textSize186">139.5sp</dimen>
+    <dimen name="margin186">139.5dp</dimen>
+    <dimen name="padding186">139.5dp</dimen>
+
+    <dimen name="textSize187">140.25sp</dimen>
+    <dimen name="margin187">140.25dp</dimen>
+    <dimen name="padding187">140.25dp</dimen>
+
+    <dimen name="textSize188">141.0sp</dimen>
+    <dimen name="margin188">141.0dp</dimen>
+    <dimen name="padding188">141.0dp</dimen>
+
+    <dimen name="textSize189">141.75sp</dimen>
+    <dimen name="margin189">141.75dp</dimen>
+    <dimen name="padding189">141.75dp</dimen>
+
+    <dimen name="textSize190">142.5sp</dimen>
+    <dimen name="margin190">142.5dp</dimen>
+    <dimen name="padding190">142.5dp</dimen>
+
+    <dimen name="textSize191">143.25sp</dimen>
+    <dimen name="margin191">143.25dp</dimen>
+    <dimen name="padding191">143.25dp</dimen>
+
+    <dimen name="textSize192">144.0sp</dimen>
+    <dimen name="margin192">144.0dp</dimen>
+    <dimen name="padding192">144.0dp</dimen>
+
+    <dimen name="textSize193">144.75sp</dimen>
+    <dimen name="margin193">144.75dp</dimen>
+    <dimen name="padding193">144.75dp</dimen>
+
+    <dimen name="textSize194">145.5sp</dimen>
+    <dimen name="margin194">145.5dp</dimen>
+    <dimen name="padding194">145.5dp</dimen>
+
+    <dimen name="textSize195">146.25sp</dimen>
+    <dimen name="margin195">146.25dp</dimen>
+    <dimen name="padding195">146.25dp</dimen>
+
+    <dimen name="textSize196">147.0sp</dimen>
+    <dimen name="margin196">147.0dp</dimen>
+    <dimen name="padding196">147.0dp</dimen>
+
+    <dimen name="textSize197">147.75sp</dimen>
+    <dimen name="margin197">147.75dp</dimen>
+    <dimen name="padding197">147.75dp</dimen>
+
+    <dimen name="textSize198">148.5sp</dimen>
+    <dimen name="margin198">148.5dp</dimen>
+    <dimen name="padding198">148.5dp</dimen>
+
+    <dimen name="textSize199">149.25sp</dimen>
+    <dimen name="margin199">149.25dp</dimen>
+    <dimen name="padding199">149.25dp</dimen>
+
+    <dimen name="textSize200">150.0sp</dimen>
+    <dimen name="margin200">150.0dp</dimen>
+    <dimen name="padding200">150.0dp</dimen>
+
+    <dimen name="textSize201">150.75sp</dimen>
+    <dimen name="margin201">150.75dp</dimen>
+    <dimen name="padding201">150.75dp</dimen>
+
+    <dimen name="textSize202">151.5sp</dimen>
+    <dimen name="margin202">151.5dp</dimen>
+    <dimen name="padding202">151.5dp</dimen>
+
+    <dimen name="textSize203">152.25sp</dimen>
+    <dimen name="margin203">152.25dp</dimen>
+    <dimen name="padding203">152.25dp</dimen>
+
+    <dimen name="textSize204">153.0sp</dimen>
+    <dimen name="margin204">153.0dp</dimen>
+    <dimen name="padding204">153.0dp</dimen>
+
+    <dimen name="textSize205">153.75sp</dimen>
+    <dimen name="margin205">153.75dp</dimen>
+    <dimen name="padding205">153.75dp</dimen>
+
+    <dimen name="textSize206">154.5sp</dimen>
+    <dimen name="margin206">154.5dp</dimen>
+    <dimen name="padding206">154.5dp</dimen>
+
+    <dimen name="textSize207">155.25sp</dimen>
+    <dimen name="margin207">155.25dp</dimen>
+    <dimen name="padding207">155.25dp</dimen>
+
+    <dimen name="textSize208">156.0sp</dimen>
+    <dimen name="margin208">156.0dp</dimen>
+    <dimen name="padding208">156.0dp</dimen>
+
+    <dimen name="textSize209">156.75sp</dimen>
+    <dimen name="margin209">156.75dp</dimen>
+    <dimen name="padding209">156.75dp</dimen>
+
+    <dimen name="textSize210">157.5sp</dimen>
+    <dimen name="margin210">157.5dp</dimen>
+    <dimen name="padding210">157.5dp</dimen>
+
+    <dimen name="textSize211">158.25sp</dimen>
+    <dimen name="margin211">158.25dp</dimen>
+    <dimen name="padding211">158.25dp</dimen>
+
+    <dimen name="textSize212">159.0sp</dimen>
+    <dimen name="margin212">159.0dp</dimen>
+    <dimen name="padding212">159.0dp</dimen>
+
+    <dimen name="textSize213">159.75sp</dimen>
+    <dimen name="margin213">159.75dp</dimen>
+    <dimen name="padding213">159.75dp</dimen>
+
+    <dimen name="textSize214">160.5sp</dimen>
+    <dimen name="margin214">160.5dp</dimen>
+    <dimen name="padding214">160.5dp</dimen>
+
+    <dimen name="textSize215">161.25sp</dimen>
+    <dimen name="margin215">161.25dp</dimen>
+    <dimen name="padding215">161.25dp</dimen>
+
+    <dimen name="textSize216">162.0sp</dimen>
+    <dimen name="margin216">162.0dp</dimen>
+    <dimen name="padding216">162.0dp</dimen>
+
+    <dimen name="textSize217">162.75sp</dimen>
+    <dimen name="margin217">162.75dp</dimen>
+    <dimen name="padding217">162.75dp</dimen>
+
+    <dimen name="textSize218">163.5sp</dimen>
+    <dimen name="margin218">163.5dp</dimen>
+    <dimen name="padding218">163.5dp</dimen>
+
+    <dimen name="textSize219">164.25sp</dimen>
+    <dimen name="margin219">164.25dp</dimen>
+    <dimen name="padding219">164.25dp</dimen>
+
+    <dimen name="textSize220">165.0sp</dimen>
+    <dimen name="margin220">165.0dp</dimen>
+    <dimen name="padding220">165.0dp</dimen>
+
+    <dimen name="textSize221">165.75sp</dimen>
+    <dimen name="margin221">165.75dp</dimen>
+    <dimen name="padding221">165.75dp</dimen>
+
+    <dimen name="textSize222">166.5sp</dimen>
+    <dimen name="margin222">166.5dp</dimen>
+    <dimen name="padding222">166.5dp</dimen>
+
+    <dimen name="textSize223">167.25sp</dimen>
+    <dimen name="margin223">167.25dp</dimen>
+    <dimen name="padding223">167.25dp</dimen>
+
+    <dimen name="textSize224">168.0sp</dimen>
+    <dimen name="margin224">168.0dp</dimen>
+    <dimen name="padding224">168.0dp</dimen>
+
+    <dimen name="textSize225">168.75sp</dimen>
+    <dimen name="margin225">168.75dp</dimen>
+    <dimen name="padding225">168.75dp</dimen>
+
+    <dimen name="textSize226">169.5sp</dimen>
+    <dimen name="margin226">169.5dp</dimen>
+    <dimen name="padding226">169.5dp</dimen>
+
+    <dimen name="textSize227">170.25sp</dimen>
+    <dimen name="margin227">170.25dp</dimen>
+    <dimen name="padding227">170.25dp</dimen>
+
+    <dimen name="textSize228">171.0sp</dimen>
+    <dimen name="margin228">171.0dp</dimen>
+    <dimen name="padding228">171.0dp</dimen>
+
+    <dimen name="textSize229">171.75sp</dimen>
+    <dimen name="margin229">171.75dp</dimen>
+    <dimen name="padding229">171.75dp</dimen>
+
+    <dimen name="textSize230">172.5sp</dimen>
+    <dimen name="margin230">172.5dp</dimen>
+    <dimen name="padding230">172.5dp</dimen>
+
+    <dimen name="textSize231">173.25sp</dimen>
+    <dimen name="margin231">173.25dp</dimen>
+    <dimen name="padding231">173.25dp</dimen>
+
+    <dimen name="textSize232">174.0sp</dimen>
+    <dimen name="margin232">174.0dp</dimen>
+    <dimen name="padding232">174.0dp</dimen>
+
+    <dimen name="textSize233">174.75sp</dimen>
+    <dimen name="margin233">174.75dp</dimen>
+    <dimen name="padding233">174.75dp</dimen>
+
+    <dimen name="textSize234">175.5sp</dimen>
+    <dimen name="margin234">175.5dp</dimen>
+    <dimen name="padding234">175.5dp</dimen>
+
+    <dimen name="textSize235">176.25sp</dimen>
+    <dimen name="margin235">176.25dp</dimen>
+    <dimen name="padding235">176.25dp</dimen>
+
+    <dimen name="textSize236">177.0sp</dimen>
+    <dimen name="margin236">177.0dp</dimen>
+    <dimen name="padding236">177.0dp</dimen>
+
+    <dimen name="textSize237">177.75sp</dimen>
+    <dimen name="margin237">177.75dp</dimen>
+    <dimen name="padding237">177.75dp</dimen>
+
+    <dimen name="textSize238">178.5sp</dimen>
+    <dimen name="margin238">178.5dp</dimen>
+    <dimen name="padding238">178.5dp</dimen>
+
+    <dimen name="textSize239">179.25sp</dimen>
+    <dimen name="margin239">179.25dp</dimen>
+    <dimen name="padding239">179.25dp</dimen>
+
+    <dimen name="textSize240">180.0sp</dimen>
+    <dimen name="margin240">180.0dp</dimen>
+    <dimen name="padding240">180.0dp</dimen>
+
+    <dimen name="textSize241">180.75sp</dimen>
+    <dimen name="margin241">180.75dp</dimen>
+    <dimen name="padding241">180.75dp</dimen>
+
+    <dimen name="textSize242">181.5sp</dimen>
+    <dimen name="margin242">181.5dp</dimen>
+    <dimen name="padding242">181.5dp</dimen>
+
+    <dimen name="textSize243">182.25sp</dimen>
+    <dimen name="margin243">182.25dp</dimen>
+    <dimen name="padding243">182.25dp</dimen>
+
+    <dimen name="textSize244">183.0sp</dimen>
+    <dimen name="margin244">183.0dp</dimen>
+    <dimen name="padding244">183.0dp</dimen>
+
+    <dimen name="textSize245">183.75sp</dimen>
+    <dimen name="margin245">183.75dp</dimen>
+    <dimen name="padding245">183.75dp</dimen>
+
+    <dimen name="textSize246">184.5sp</dimen>
+    <dimen name="margin246">184.5dp</dimen>
+    <dimen name="padding246">184.5dp</dimen>
+
+    <dimen name="textSize247">185.25sp</dimen>
+    <dimen name="margin247">185.25dp</dimen>
+    <dimen name="padding247">185.25dp</dimen>
+
+    <dimen name="textSize248">186.0sp</dimen>
+    <dimen name="margin248">186.0dp</dimen>
+    <dimen name="padding248">186.0dp</dimen>
+
+    <dimen name="textSize249">186.75sp</dimen>
+    <dimen name="margin249">186.75dp</dimen>
+    <dimen name="padding249">186.75dp</dimen>
+
+    <dimen name="textSize250">187.5sp</dimen>
+    <dimen name="margin250">187.5dp</dimen>
+    <dimen name="padding250">187.5dp</dimen>
+
+    <dimen name="textSize251">188.25sp</dimen>
+    <dimen name="margin251">188.25dp</dimen>
+    <dimen name="padding251">188.25dp</dimen>
+
+    <dimen name="textSize252">189.0sp</dimen>
+    <dimen name="margin252">189.0dp</dimen>
+    <dimen name="padding252">189.0dp</dimen>
+
+    <dimen name="textSize253">189.75sp</dimen>
+    <dimen name="margin253">189.75dp</dimen>
+    <dimen name="padding253">189.75dp</dimen>
+
+    <dimen name="textSize254">190.5sp</dimen>
+    <dimen name="margin254">190.5dp</dimen>
+    <dimen name="padding254">190.5dp</dimen>
+
+    <dimen name="textSize255">191.25sp</dimen>
+    <dimen name="margin255">191.25dp</dimen>
+    <dimen name="padding255">191.25dp</dimen>
+
+    <dimen name="textSize256">192.0sp</dimen>
+    <dimen name="margin256">192.0dp</dimen>
+    <dimen name="padding256">192.0dp</dimen>
+
+    <dimen name="textSize257">192.75sp</dimen>
+    <dimen name="margin257">192.75dp</dimen>
+    <dimen name="padding257">192.75dp</dimen>
+
+    <dimen name="textSize258">193.5sp</dimen>
+    <dimen name="margin258">193.5dp</dimen>
+    <dimen name="padding258">193.5dp</dimen>
+
+    <dimen name="textSize259">194.25sp</dimen>
+    <dimen name="margin259">194.25dp</dimen>
+    <dimen name="padding259">194.25dp</dimen>
+
+    <dimen name="textSize260">195.0sp</dimen>
+    <dimen name="margin260">195.0dp</dimen>
+    <dimen name="padding260">195.0dp</dimen>
+
+    <dimen name="textSize261">195.75sp</dimen>
+    <dimen name="margin261">195.75dp</dimen>
+    <dimen name="padding261">195.75dp</dimen>
+
+    <dimen name="textSize262">196.5sp</dimen>
+    <dimen name="margin262">196.5dp</dimen>
+    <dimen name="padding262">196.5dp</dimen>
+
+    <dimen name="textSize263">197.25sp</dimen>
+    <dimen name="margin263">197.25dp</dimen>
+    <dimen name="padding263">197.25dp</dimen>
+
+    <dimen name="textSize264">198.0sp</dimen>
+    <dimen name="margin264">198.0dp</dimen>
+    <dimen name="padding264">198.0dp</dimen>
+
+    <dimen name="textSize265">198.75sp</dimen>
+    <dimen name="margin265">198.75dp</dimen>
+    <dimen name="padding265">198.75dp</dimen>
+
+    <dimen name="textSize266">199.5sp</dimen>
+    <dimen name="margin266">199.5dp</dimen>
+    <dimen name="padding266">199.5dp</dimen>
+
+    <dimen name="textSize267">200.25sp</dimen>
+    <dimen name="margin267">200.25dp</dimen>
+    <dimen name="padding267">200.25dp</dimen>
+
+    <dimen name="textSize268">201.0sp</dimen>
+    <dimen name="margin268">201.0dp</dimen>
+    <dimen name="padding268">201.0dp</dimen>
+
+    <dimen name="textSize269">201.75sp</dimen>
+    <dimen name="margin269">201.75dp</dimen>
+    <dimen name="padding269">201.75dp</dimen>
+
+    <dimen name="textSize270">202.5sp</dimen>
+    <dimen name="margin270">202.5dp</dimen>
+    <dimen name="padding270">202.5dp</dimen>
+
+    <dimen name="textSize271">203.25sp</dimen>
+    <dimen name="margin271">203.25dp</dimen>
+    <dimen name="padding271">203.25dp</dimen>
+
+    <dimen name="textSize272">204.0sp</dimen>
+    <dimen name="margin272">204.0dp</dimen>
+    <dimen name="padding272">204.0dp</dimen>
+
+    <dimen name="textSize273">204.75sp</dimen>
+    <dimen name="margin273">204.75dp</dimen>
+    <dimen name="padding273">204.75dp</dimen>
+
+    <dimen name="textSize274">205.5sp</dimen>
+    <dimen name="margin274">205.5dp</dimen>
+    <dimen name="padding274">205.5dp</dimen>
+
+    <dimen name="textSize275">206.25sp</dimen>
+    <dimen name="margin275">206.25dp</dimen>
+    <dimen name="padding275">206.25dp</dimen>
+
+    <dimen name="textSize276">207.0sp</dimen>
+    <dimen name="margin276">207.0dp</dimen>
+    <dimen name="padding276">207.0dp</dimen>
+
+    <dimen name="textSize277">207.75sp</dimen>
+    <dimen name="margin277">207.75dp</dimen>
+    <dimen name="padding277">207.75dp</dimen>
+
+    <dimen name="textSize278">208.5sp</dimen>
+    <dimen name="margin278">208.5dp</dimen>
+    <dimen name="padding278">208.5dp</dimen>
+
+    <dimen name="textSize279">209.25sp</dimen>
+    <dimen name="margin279">209.25dp</dimen>
+    <dimen name="padding279">209.25dp</dimen>
+
+    <dimen name="textSize280">210.0sp</dimen>
+    <dimen name="margin280">210.0dp</dimen>
+    <dimen name="padding280">210.0dp</dimen>
+
+    <dimen name="textSize281">210.75sp</dimen>
+    <dimen name="margin281">210.75dp</dimen>
+    <dimen name="padding281">210.75dp</dimen>
+
+    <dimen name="textSize282">211.5sp</dimen>
+    <dimen name="margin282">211.5dp</dimen>
+    <dimen name="padding282">211.5dp</dimen>
+
+    <dimen name="textSize283">212.25sp</dimen>
+    <dimen name="margin283">212.25dp</dimen>
+    <dimen name="padding283">212.25dp</dimen>
+
+    <dimen name="textSize284">213.0sp</dimen>
+    <dimen name="margin284">213.0dp</dimen>
+    <dimen name="padding284">213.0dp</dimen>
+
+    <dimen name="textSize285">213.75sp</dimen>
+    <dimen name="margin285">213.75dp</dimen>
+    <dimen name="padding285">213.75dp</dimen>
+
+    <dimen name="textSize286">214.5sp</dimen>
+    <dimen name="margin286">214.5dp</dimen>
+    <dimen name="padding286">214.5dp</dimen>
+
+    <dimen name="textSize287">215.25sp</dimen>
+    <dimen name="margin287">215.25dp</dimen>
+    <dimen name="padding287">215.25dp</dimen>
+
+    <dimen name="textSize288">216.0sp</dimen>
+    <dimen name="margin288">216.0dp</dimen>
+    <dimen name="padding288">216.0dp</dimen>
+
+    <dimen name="textSize289">216.75sp</dimen>
+    <dimen name="margin289">216.75dp</dimen>
+    <dimen name="padding289">216.75dp</dimen>
+
+    <dimen name="textSize290">217.5sp</dimen>
+    <dimen name="margin290">217.5dp</dimen>
+    <dimen name="padding290">217.5dp</dimen>
+
+    <dimen name="textSize291">218.25sp</dimen>
+    <dimen name="margin291">218.25dp</dimen>
+    <dimen name="padding291">218.25dp</dimen>
+
+    <dimen name="textSize292">219.0sp</dimen>
+    <dimen name="margin292">219.0dp</dimen>
+    <dimen name="padding292">219.0dp</dimen>
+
+    <dimen name="textSize293">219.75sp</dimen>
+    <dimen name="margin293">219.75dp</dimen>
+    <dimen name="padding293">219.75dp</dimen>
+
+    <dimen name="textSize294">220.5sp</dimen>
+    <dimen name="margin294">220.5dp</dimen>
+    <dimen name="padding294">220.5dp</dimen>
+
+    <dimen name="textSize295">221.25sp</dimen>
+    <dimen name="margin295">221.25dp</dimen>
+    <dimen name="padding295">221.25dp</dimen>
+
+    <dimen name="textSize296">222.0sp</dimen>
+    <dimen name="margin296">222.0dp</dimen>
+    <dimen name="padding296">222.0dp</dimen>
+
+    <dimen name="textSize297">222.75sp</dimen>
+    <dimen name="margin297">222.75dp</dimen>
+    <dimen name="padding297">222.75dp</dimen>
+
+    <dimen name="textSize298">223.5sp</dimen>
+    <dimen name="margin298">223.5dp</dimen>
+    <dimen name="padding298">223.5dp</dimen>
+
+    <dimen name="textSize299">224.25sp</dimen>
+    <dimen name="margin299">224.25dp</dimen>
+    <dimen name="padding299">224.25dp</dimen>
+
+    <dimen name="textSize300">225.0sp</dimen>
+    <dimen name="margin300">225.0dp</dimen>
+    <dimen name="padding300">225.0dp</dimen>
+
+</resources>
