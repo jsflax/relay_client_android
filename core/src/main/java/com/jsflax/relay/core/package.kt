@@ -1,6 +1,12 @@
 package com.jsflax.relay.core
 
+import android.app.Dialog
+import android.content.Context
+import android.content.DialogInterface
 import android.os.AsyncTask
+import android.support.v7.app.AlertDialog
+import android.view.View
+import android.widget.FrameLayout
 import com.relay.service.base.Payload
 
 /**
@@ -23,3 +29,30 @@ class NetworkFetcher<A>(val task: () -> Payload<A>,
 
 fun <A> async(task: () -> Payload<A>, result: (Payload<A>) -> Unit) =
     NetworkFetcher(task, result).execute()
+
+fun getIndeterminateDialog(context: Context): Dialog {
+    val dialog = Dialog(context, R.style.CustomDialog);
+    dialog.setCancelable(false);
+    dialog.addContentView(
+        View.inflate(
+            context, R.layout.view_progressbar_indeterminate, null
+        ),
+        FrameLayout.LayoutParams(
+            context.resources.getDimensionPixelSize(R.dimen.margin25),
+            context.resources.getDimensionPixelSize(R.dimen.margin25)
+        )
+    );
+
+    return dialog
+}
+
+fun showErrorDialog(context: Context, title: String, message: String) {
+    AlertDialog.Builder(context)
+        .setTitle(title)
+        .setMessage(message)
+        .setPositiveButton(
+            android.R.string.ok,
+            { dialog: DialogInterface, which: Int -> }
+        )
+        .show()
+}

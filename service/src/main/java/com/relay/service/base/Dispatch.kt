@@ -13,7 +13,7 @@ internal object Dispatch {
                         host: String? = null,
                         handler: (Payload<A>) -> A?): Payload<A> {
         try {
-            val result = Http("${host?:RelayService.config?.host}$url")
+            val result = Http("http://${host?:RelayService.config?.host}$url")
                 .call(request)
                 .getResponse()
 

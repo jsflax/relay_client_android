@@ -1,0 +1,170 @@
+package com.jsflax.relay.ui
+
+import android.net.Uri
+import android.support.v4.view.ViewCompat
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.util.LayoutDirection
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.drawee.view.SimpleDraweeView
+import com.facebook.imagepipeline.request.ImageRequest
+
+import com.relay.data.MessageResponse
+
+/**
+ * @author jasonflax on 4/2/16.
+ */
+class MessageResponseViewHolder(val view: View) :
+    RecyclerView.ViewHolder(view) {
+
+    val message = view.findViewById(R.id.message) as? TextView
+
+    fun bindMessage(response: MessageResponse) {
+        message?.text = response.rawContent
+    }
+}
+
+class MessageAdapter(val inflater: LayoutInflater) :
+    RecyclerView.Adapter<MessageResponseViewHolder>() {
+
+    var messages: List<MessageResponse> = mutableListOf()
+
+    fun bindMessageList(messageList: List<MessageResponse>) {
+        messages = messageList
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount(): Int = messages.size
+
+    override fun onCreateViewHolder(parent: ViewGroup?,
+                                    viewType: Int): MessageResponseViewHolder? {
+        return MessageResponseViewHolder(
+            inflater.inflate(R.layout.vh_message, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: MessageResponseViewHolder?,
+                                  position: Int) {
+        holder?.bindMessage(messages[position])
+    }
+}
+
+class MessageListViewHolder(val view: View) :
+    RecyclerView.ViewHolder(view) {
+
+    val avatar = view.findViewById(R.id.avatar) as SimpleDraweeView
+    val messages = view.findViewById(R.id.messages) as RecyclerView
+
+    init {
+        val layoutManager = LinearLayoutManager(view.context)
+        layoutManager.stackFromEnd = true
+        messages.layoutManager = layoutManager
+        messages.adapter = MessageAdapter(LayoutInflater.from(view.context))
+    }
+
+    var previousItemViewType = ChatAdapter.MessageTypeThem
+
+    fun bindMessageList(messageList: MessageList,
+                        itemViewType: Int) {
+        if (previousItemViewType != itemViewType) {
+            previousItemViewType = itemViewType
+
+            var children: List<View> = mutableListOf()
+
+            for (i in 0..(view as ViewGroup).childCount - 1) {
+                children += view.getChildAt(i)
+            }
+
+            view.removeAllViews()
+
+            for (child in children.reversed()) { view.addView(child) }
+        }
+
+        val controller = Fresco.newDraweeControllerBuilder()
+            .setImageRequest(
+                ImageRequest.fromUri(
+                    Uri.parse(messageList.messages.first().avatarUrl)
+                )
+            )
+            .setOldController(avatar.controller).build()
+
+        avatar.controller = controller
+
+        (messages.adapter as MessageAdapter).bindMessageList(
+            messageList.messages
+        )
+    }
+}
+
+class MessageList(val userId: Int,
+                  var messages: List<MessageResponse>)
+
+class ChatAdapter(val layoutInflater: LayoutInflater,
+                  val userId: Int = -1) :
+    RecyclerView.Adapter<MessageListViewHolder>() {
+    companion object {
+        internal const val MessageTypeThem = 1
+        internal const val MessageTypeMe = 2
+    }
+
+    internal val messages: MutableList<MessageList> =
+        mutableListOf()
+
+    fun addMessage(messageResponse: MessageResponse) {
+        if (messages.size > 0) {
+            val lastMessages = messages.last()
+
+            if (lastMessages.userId == messageResponse.userId) {
+                lastMessages.messages += messageResponse
+            } else {
+                messages.add(
+                    MessageList(
+                        messageResponse.userId,
+                        mutableListOf(messageResponse)
+                    )
+                )
+            }
+        } else {
+            messages.add(
+                MessageList(
+                    messageResponse.userId,
+                    mutableListOf(messageResponse)
+                )
+            )
+        }
+
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount(): Int = this.messages.size
+
+    override fun getItemViewType(position: Int): Int {
+        return if (messages[position].userId == userId) {
+            MessageTypeMe
+        } else {
+            MessageTypeThem
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup?,
+                                    viewType: Int): MessageListViewHolder? {
+        return MessageListViewHolder(
+            this.layoutInflater.inflate(
+                R.layout.vh_message_list_them,
+                parent,
+                false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: MessageListViewHolder?,
+                                  position: Int) {
+        holder?.bindMessageList(messages[position], getItemViewType(position))
+    }
+}
+

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ui</string>
+    <string name="you_must_log_in">you must log in to continue</string>
+    <string name="log_in">log in</string>
+    <string name="sign_up">sign up</string>
+    <string name="select_avatar">select avatar</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="change">change</string>
+    <string name="you_must_join_a_channel">you must join a channel to chat</string>
+    <string name="see_channels">see channels</string>
+    <string name="write_a_message">write a message</string>
 </resources>

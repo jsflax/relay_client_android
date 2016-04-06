@@ -1,5 +1,7 @@
 package com.relay.data
 
+import java.io.Serializable
+
 /**
  * @author jasonflax on 4/2/16.
  */
@@ -25,7 +27,7 @@ data class ChannelSubscribeRequest(val map: Map<String, Any?>) {
     val token: String by map
 }
 
-data class Channel(val map: Map<String, Any?>) {
+data class Channel(val map: Map<String, Any?>): Serializable {
     constructor(id: Int,
                 creatorId: Int,
                 name: String,

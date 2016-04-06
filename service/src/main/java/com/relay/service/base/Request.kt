@@ -67,3 +67,10 @@ final class POST(val params: Map<String, Any?>,
 
     override fun render(): String = contentType.render(params)
 }
+
+final class PUT(val params: Map<String, Any?>,
+                override val contentType: ContentType =
+                ContentType.APPLICATION_JSON): Request("PUT"), Entity {
+
+    override fun render(): String = contentType.render(params)
+}

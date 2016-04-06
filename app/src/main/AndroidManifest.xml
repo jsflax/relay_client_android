@@ -2,6 +2,8 @@
 <manifest package="com.jsflax.relay"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".RelayApplication"
         android:allowBackup="true"
@@ -20,6 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MasterActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+                  android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

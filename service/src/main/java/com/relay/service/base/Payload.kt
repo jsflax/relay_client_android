@@ -15,11 +15,17 @@ class Payload<A>() {
     }
 
     internal val data: JsonElement? by lazy {
-        json?.asJsonObject?.get("data")?:json?.asJsonObject
+        if (json?.asJsonObject?.get("data")?.isJsonObject?:false) {
+            json?.asJsonObject?.get("data")?:json?.asJsonObject
+        } else if (json?.asJsonObject?.get("data")?.isJsonArray?:false) {
+            json?.asJsonObject?.get("data")?:json?.asJsonArray
+        } else {
+            null
+        }
     }
 
     val status: Int by lazy {
-        json?.asJsonObject?.get("success")?.asInt?: 500
+        json?.asJsonObject?.get("status")?.asInt?: 500
     }
 
     val message: String by lazy {

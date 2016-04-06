@@ -1,6 +1,6 @@
 package com.relay.service
 
-internal class Config(val host: String) {
+class Config(val host: String) {
 }
 
 /**
@@ -8,7 +8,7 @@ internal class Config(val host: String) {
  */
 object RelayService {
     private var _config: Config? = null
-    internal var config: Config?
+    var config: Config?
         get() {
             if (_config == null) {
                 throw Exception("RelayService not initialized!")
