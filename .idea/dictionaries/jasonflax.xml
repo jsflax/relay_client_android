@@ -2,6 +2,7 @@
   <dictionary name="jasonflax">
     <words>
       <w>redux</w>
+      <w>websocket</w>
     </words>
   </dictionary>
 </component>

@@ -5,6 +5,8 @@ import com.relay.service.RelayService
 import kotlin.printStackTrace
 
 /**
+ * Internal base class to fetch data from the server.
+ *
  * Created by jasonflax on 3/8/16.
  */
 internal object Dispatch {

@@ -24,11 +24,6 @@ class Http(val url: String) {
         }.openConnection() as HttpURLConnection
     }
 
-    fun headers(headers: Map<String, Any?>): Http {
-        this.headers = headers
-        return this
-    }
-
     fun call(request: Request): Http {
         this.request = request
 
@@ -87,7 +82,7 @@ class Http(val url: String) {
 
                 return HttpResponse(
                     httpUrlConnection?.responseCode ?: 500,
-                    if (httpUrlConnection?.responseCode == 200) {
+                    if (httpUrlConnection?.responseCode ?: 500 == 200) {
                         val inputStream = httpUrlConnection?.inputStream
                         val rd = BufferedReader(
                             InputStreamReader(inputStream))
@@ -109,6 +104,4 @@ class Http(val url: String) {
             return null
         }
     }
-
-    fun asString(): String? = getResponse()?.body
 }

@@ -1,7 +1,6 @@
 package com.jsflax.relay
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
@@ -12,20 +11,48 @@ import com.relay.data.MessageRequest
 
 class MasterActivity : AppCompatActivity() {
     companion object {
+        // key meant to be used for subscribing
+        // to redux actions
         const val MasterReduxKey = "masterReduxKey"
     }
 
+    /**
+     * Convenience method to dismiss an avatar selection dialog if it exists
+     */
     fun dismissAvatarDialog() {
         (supportFragmentManager.findFragmentByTag("avatar_selection")
-            as AvatarSelectionFragment).dismiss()
+            as? AvatarSelectionFragment)?.dismiss()
     }
 
+    /**
+     * Convenience method to display an avatar selection dialog
+     */
     fun showAvatarDialog() {
         AvatarSelectionFragment().show(
             supportFragmentManager, "avatar_selection"
         )
     }
 
+    /**
+     * Commit sign up fragment to stack
+     */
+    fun dismissCreateChannelDialog() {
+        (supportFragmentManager.findFragmentByTag("create_channel")
+            as? CreateChannelFragment)?.dismiss()
+    }
+
+    /**
+     * Commit sign up fragment to stack
+     */
+    fun showCreateChannelDialog() {
+        CreateChannelFragment().show(
+            supportFragmentManager, "create_channel"
+        )
+    }
+
+    /**
+     * Commit log in fragment to stack
+     */
     fun addLogInFragment() {
         supportActionBar?.title = "log in"
 
@@ -36,6 +63,9 @@ class MasterActivity : AppCompatActivity() {
             .commit()
     }
 
+    /**
+     * Commit sign up fragment to stack
+     */
     fun addSignUpFragment() {
         supportActionBar?.title = "sign up"
 
@@ -46,6 +76,9 @@ class MasterActivity : AppCompatActivity() {
             .commit()
     }
 
+    /**
+     * Render chat tab in replacement of current tab
+     */
     fun renderChatTab() {
         supportActionBar?.title = ReduxStore.subscribedChannel?.name ?: "chat"
         val fragment = if (ReduxStore.subscribedChannel != null)
@@ -60,6 +93,9 @@ class MasterActivity : AppCompatActivity() {
             .commit()
     }
 
+    /**
+     * Render user tab in replacement of current tab
+     */
     fun renderUserTab() {
         supportActionBar?.title = "user"
 
@@ -78,6 +114,9 @@ class MasterActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Render channel tab in replacement of current tab
+     */
     fun renderChannelTab() {
         supportActionBar?.title = "channels"
 
@@ -88,21 +127,29 @@ class MasterActivity : AppCompatActivity() {
             .commit()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
-        super.onSaveInstanceState(outState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        ReduxStore.unsubscribe(MasterReduxKey)
-    }
+        // set content view to top level layout
+        setContentView(R.layout.activity_splash)
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
+        // set the action bar
+        val toolbar = findViewById(R.id.toolbar) as Toolbar?
 
-        ReduxStore.subscribe(MasterReduxKey, {
-            when (it) {
+        setSupportActionBar(toolbar)
+
+        // reconnect websocket client if necessary
+        ReduxStore.client.connect()
+
+        // subscribe (or re-subscribe) to redux store,
+        // reducing the actions
+        ReduxStore.subscribe(MasterReduxKey, { action ->
+            when (action) {
                 Action.NavigateToChannels -> renderChannelTab()
                 Action.NavigateToUser -> renderUserTab()
                 Action.NavigateToChat -> renderChatTab()
-                Action.LogOut -> {}
+                Action.LogOut -> {
+                }
                 Action.BeginLogIn -> addLogInFragment()
                 Action.BeginSignUp -> addSignUpFragment()
                 Action.ExecuteLogIn, Action.ExecuteSignUp -> renderUserTab()
@@ -111,10 +158,14 @@ class MasterActivity : AppCompatActivity() {
                 }
                 Action.SendMessage -> {
                     ReduxStore.client.send(
-                        Gson().toJson(it.associatedData as MessageRequest)
+                        Gson().toJson(action.associatedData as MessageRequest)
                     )
                 }
-                Action.CreateChannel -> {
+                Action.BeginCreateChannel -> {
+                    showCreateChannelDialog()
+                }
+                Action.ExecuteCreateChannel -> {
+                    dismissCreateChannelDialog()
                 }
                 Action.ShowAvatars -> showAvatarDialog()
                 Action.SelectedAvatar -> dismissAvatarDialog()
@@ -122,17 +173,11 @@ class MasterActivity : AppCompatActivity() {
                 }
             }
         })
-    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_splash)
-
-        val toolbar = findViewById(R.id.toolbar) as Toolbar?
-
-        setSupportActionBar(toolbar)
-
+        // if this is our first time creating the activity,
+        // reduce the current state of the application and render the
+        // appropriate tab
         if (savedInstanceState == null) {
             when (ReduxStore.getState()) {
                 State.NotSubscribedAndLoggedIn -> {
@@ -152,6 +197,7 @@ class MasterActivity : AppCompatActivity() {
             }
         }
 
+        // set on click listeners for the respective tab buttons
         findViewById(R.id.nav_channels_button)?.setOnClickListener {
             ReduxStore.dispatch(Action.NavigateToChannels)
         }
@@ -173,7 +219,7 @@ class MasterActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
+        val id: Int = item.itemId
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {

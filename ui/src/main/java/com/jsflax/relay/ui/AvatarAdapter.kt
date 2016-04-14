@@ -48,9 +48,7 @@ class AvatarViewHolder(context: Context,
 class AvatarAdapter(val assets: List<Asset>,
                     val onAvatarClickListener: (Asset) -> Unit,
                     val inflater: LayoutInflater): ListAdapter {
-    override fun isEmpty(): Boolean {
-        throw UnsupportedOperationException()
-    }
+    override fun isEmpty(): Boolean = false
 
     override fun hasStableIds(): Boolean = false
 
@@ -71,7 +69,7 @@ class AvatarAdapter(val assets: List<Asset>,
 
     override fun getItem(position: Int): Any? = assets[position]
 
-    override fun getViewTypeCount(): Int = 1
+    override fun getViewTypeCount(): Int = 0
 
     override fun isEnabled(position: Int): Boolean = true
 

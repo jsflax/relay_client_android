@@ -4,11 +4,10 @@ import android.net.Uri
 import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.LayoutDirection
+import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.drawee.view.SimpleDraweeView
@@ -24,17 +23,18 @@ class MessageResponseViewHolder(val view: View) :
 
     val message = view.findViewById(R.id.message) as? TextView
 
-    fun bindMessage(response: MessageResponse) {
-        message?.text = response.rawContent
+    fun bindMessage(response: SpannableStringBuilder) {
+        message?.text = response
     }
 }
 
 class MessageAdapter(val inflater: LayoutInflater) :
     RecyclerView.Adapter<MessageResponseViewHolder>() {
 
-    var messages: List<MessageResponse> = mutableListOf()
+    var messages: List<Pair<MessageResponse, SpannableStringBuilder>> = mutableListOf()
 
-    fun bindMessageList(messageList: List<MessageResponse>) {
+    fun bindMessageList(messageList:
+                        List<Pair<MessageResponse, SpannableStringBuilder>>) {
         messages = messageList
         notifyDataSetChanged()
     }
@@ -50,7 +50,7 @@ class MessageAdapter(val inflater: LayoutInflater) :
 
     override fun onBindViewHolder(holder: MessageResponseViewHolder?,
                                   position: Int) {
-        holder?.bindMessage(messages[position])
+        holder?.bindMessage(messages[position].second)
     }
 }
 
@@ -67,28 +67,33 @@ class MessageListViewHolder(val view: View) :
         messages.adapter = MessageAdapter(LayoutInflater.from(view.context))
     }
 
-    var previousItemViewType = ChatAdapter.MessageTypeThem
+    var previousItemViewType: Int = ChatAdapter.MessageTypeThem
 
     fun bindMessageList(messageList: MessageList,
                         itemViewType: Int) {
         if (previousItemViewType != itemViewType) {
             previousItemViewType = itemViewType
 
-            var children: List<View> = mutableListOf()
+            ViewCompat.setLayoutDirection(
+                view,
+                itemViewType
+            )
 
-            for (i in 0..(view as ViewGroup).childCount - 1) {
-                children += view.getChildAt(i)
-            }
-
-            view.removeAllViews()
-
-            for (child in children.reversed()) { view.addView(child) }
+//            var children: List<View> = mutableListOf()
+//
+//            for (i in 0..(view as ViewGroup).childCount - 1) {
+//                children += view.getChildAt(i)
+//            }
+//
+//            view.removeAllViews()
+//
+//            for (child in children.reversed()) { view.addView(child) }
         }
 
         val controller = Fresco.newDraweeControllerBuilder()
             .setImageRequest(
                 ImageRequest.fromUri(
-                    Uri.parse(messageList.messages.first().avatarUrl)
+                    Uri.parse(messageList.messages.first().first.avatarUrl)
                 )
             )
             .setOldController(avatar.controller).build()
@@ -102,29 +107,29 @@ class MessageListViewHolder(val view: View) :
 }
 
 class MessageList(val userId: Int,
-                  var messages: List<MessageResponse>)
+                  var messages: List<Pair<MessageResponse, SpannableStringBuilder>>)
 
 class ChatAdapter(val layoutInflater: LayoutInflater,
-                  val userId: Int = -1) :
+                  val userId: Int) :
     RecyclerView.Adapter<MessageListViewHolder>() {
     companion object {
-        internal const val MessageTypeThem = 1
-        internal const val MessageTypeMe = 2
+        internal const val MessageTypeThem: Int = 0
+        internal const val MessageTypeMe: Int = 1
     }
 
     internal val messages: MutableList<MessageList> =
         mutableListOf()
 
-    fun addMessage(messageResponse: MessageResponse) {
+    fun addMessage(messageResponse: Pair<MessageResponse, SpannableStringBuilder>) {
         if (messages.size > 0) {
             val lastMessages = messages.last()
 
-            if (lastMessages.userId == messageResponse.userId) {
+            if (lastMessages.userId == messageResponse.first.userId) {
                 lastMessages.messages += messageResponse
             } else {
                 messages.add(
                     MessageList(
-                        messageResponse.userId,
+                        messageResponse.first.userId,
                         mutableListOf(messageResponse)
                     )
                 )
@@ -132,7 +137,7 @@ class ChatAdapter(val layoutInflater: LayoutInflater,
         } else {
             messages.add(
                 MessageList(
-                    messageResponse.userId,
+                    messageResponse.first.userId,
                     mutableListOf(messageResponse)
                 )
             )
@@ -155,7 +160,7 @@ class ChatAdapter(val layoutInflater: LayoutInflater,
                                     viewType: Int): MessageListViewHolder? {
         return MessageListViewHolder(
             this.layoutInflater.inflate(
-                R.layout.vh_message_list_them,
+                R.layout.vh_message_list,
                 parent,
                 false
             )

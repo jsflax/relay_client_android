@@ -8,8 +8,10 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 import com.relay.data.Channel
+import com.relay.data.Emoticon
 import com.relay.data.MessageResponse
 import com.relay.data.User
+import com.relay.service.Emoticons
 import com.relay.service.RelayService
 import com.relay.service.base.WebSocketClient
 import com.relay.service.toMap
@@ -86,9 +88,13 @@ enum class Action {
      */
     Subscribe,
     /**
-     * Create a channel
+     * Begin channel creation process
      */
-    CreateChannel,
+    BeginCreateChannel,
+    /**
+     * Actually create channel
+     */
+    ExecuteCreateChannel,
     /**
      * Begin the log in process
      */
@@ -134,15 +140,22 @@ enum class Action {
      */
     ShowAvatars,
     /**
-     * Select an avatar from the selection
+     * Selected an avatar from the selection
      */
-    SelectedAvatar;
+    SelectedAvatar,
+    /**
+     * Selected an emoticon from the selection
+     */
+    SelectedEmoticon;
 
     /**
      * Singular piece of data that can be associated with an action
      */
     var associatedData: Any? = null
 }
+
+private class ExpiryStorage(val expires: Long,
+                            val data: String)
 
 object ReduxStore {
 
@@ -177,6 +190,48 @@ object ReduxStore {
         }
     }
 
+    private var _emoticons: Array<Emoticon> = arrayOf()
+    var emoticons: Array<Emoticon> = _emoticons
+    get() {
+        if (_emoticons.isEmpty()) {
+            val serEmoticons = sharedPreferences?.getString("emotes", "")
+            val restore = {
+                async({ Emoticons.get() }) {
+                    _emoticons = it.parcel?.toTypedArray()?:arrayOf()
+
+                    sharedPreferences?.edit()?.putString(
+                        "emotes",
+                        Gson().toJson(
+                            ExpiryStorage(
+                                System.currentTimeMillis() + 604800000,
+                                Gson().toJson(_emoticons)
+                            )
+                        )
+                    )?.apply()
+                }
+            }
+            if (serEmoticons.isNullOrEmpty()) {
+                restore()
+            } else {
+                val stored = Gson().fromJson(
+                    serEmoticons, ExpiryStorage::class.java
+                )
+
+                if (stored.expires < System.currentTimeMillis()) {
+                    restore()
+                }
+
+                _emoticons = Gson().fromJson(
+                    stored.data, Array<Emoticon>::class.java
+                )
+            }
+
+            return _emoticons
+        } else {
+            return _emoticons
+        }
+    }
+
     private var state: State = State.NotSubscribedAndNotLoggedIn
     fun getState() = state
 
@@ -198,7 +253,6 @@ object ReduxStore {
 
     fun init(context: Context) {
         this.context = context
-        client.connect()
     }
 
     fun reduce(action: Action) {
@@ -214,8 +268,9 @@ object ReduxStore {
                     else -> state
                 }
             }
-        // creating a channel is essentially the same as subscribing
-            Action.CreateChannel -> reduce(Action.Subscribe)
+            Action.ExecuteCreateChannel -> dispatch(
+                Action.Subscribe, action.associatedData
+            )
         // logging in or signing up increments the state to a
         // logged in state
             Action.ExecuteLogIn, Action.ExecuteSignUp -> {
@@ -228,7 +283,7 @@ object ReduxStore {
         }
     }
 
-    private var lastKey = 0
+    private var lastKey: Int = 0
 
     fun subscribe(key: String, binder: (Action) -> Unit) {
         if (key.contains("[^a-zA-Z0-9]+".toRegex())) {
@@ -300,11 +355,11 @@ object ReduxStore {
         }
 
         override fun onMessage(data: ByteArray) {
-            Log.d(TAG, String.format("Got binary message! %s", String(data)))
+            Log.d(TAG, "Got binary message! $data")
         }
 
         override fun onDisconnect(code: Int, reason: String?) {
-            Log.d(TAG, String.format("Disconnected! Code: %d Reason: %s", code, reason))
+            Log.d(TAG, "Disconnected! Code: $code Reason: $reason")
         }
 
         override fun onError(error: Exception) {

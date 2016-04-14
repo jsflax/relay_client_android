@@ -90,9 +90,9 @@ class WebSocketClient(private val path: String,
 
                 while (line != null && !line.isEmpty()) {
                     val header = parseHeader(line)
-                    if (header.getName().equals("Sec-WebSocket-Accept")) {
+                    if (header.name.equals("Sec-WebSocket-Accept")) {
                         val expected = createSecretValidation(secret)
-                        val actual = header.getValue().trim()
+                        val actual = header.value.trim()
 
                         if (expected != actual) {
                             throw Exception("Bad Sec-WebSocket-Accept header value.")
@@ -143,11 +143,11 @@ class WebSocketClient(private val path: String,
     }
 
     fun send(data: String) {
-        sendFrame(mParser.frame(data))
+        sendFrame(mParser.frame(data)?: ByteArray(0))
     }
 
     fun send(data: ByteArray) {
-        sendFrame(mParser.frame(data))
+        sendFrame(mParser.frame(data)?: ByteArray(0))
     }
 
     private fun parseStatusLine(line: String): StatusLine? {

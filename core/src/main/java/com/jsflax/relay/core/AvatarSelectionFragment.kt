@@ -4,14 +4,12 @@ import android.content.Context
 import android.graphics.Point
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.GridView
 import com.jsflax.relay.ui.AvatarAdapter
-import com.jsflax.relay.ui.AvatarViewHolder
 import com.relay.service.Assets
 
 /**
@@ -51,13 +49,22 @@ class AvatarSelectionFragment : DialogFragment() {
                 R.layout.view_avatar_selection, container, false
             )
             val grid = view?.findViewById(R.id.avatar_grid) as? GridView
+
+            // set number of columns
             grid?.numColumns = 3
+
+            // fetch list of avatars and set up
+            // the grid
             async({ Assets.avatars() }) {
-                grid?.adapter = AvatarAdapter(
-                    it.parcel!!,
-                    { ReduxStore.dispatch(Action.SelectedAvatar, it) },
-                    LayoutInflater.from(context)
-                )
+                // if we've received avatars,
+                // adapt the data for the grid
+                if (it.parcel?.isNotEmpty()?:false) {
+                    grid?.adapter = AvatarAdapter(
+                        it.parcel!!,
+                        { ReduxStore.dispatch(Action.SelectedAvatar, it) },
+                        LayoutInflater.from(context)
+                    )
+                }
             }
         }
 

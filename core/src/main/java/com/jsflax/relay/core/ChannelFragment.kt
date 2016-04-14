@@ -50,7 +50,6 @@ class ChannelFragment : Fragment() {
         outState?.putSerializable("channels", adapter.channels.toTypedArray())
     }
 
-    @SuppressWarnings("unchecked")
     override fun onCreateView(inflater: LayoutInflater?,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -67,6 +66,10 @@ class ChannelFragment : Fragment() {
 
             recyclerView?.adapter = adapter
 
+            view?.findViewById(R.id.fab)?.setOnClickListener {
+                ReduxStore.dispatch(Action.BeginCreateChannel)
+            }
+
             if (savedInstanceState == null) {
                 // fetch list of channels from server
                 async({ Channels.get() }) {
@@ -75,7 +78,8 @@ class ChannelFragment : Fragment() {
                 }
             } else {
                 adapter.setChannels(
-                    savedInstanceState.getSerializable("channels") as Array<Channel>
+                    savedInstanceState.getSerializable("channels")
+                        as Array<Channel>
                 )
             }
         }

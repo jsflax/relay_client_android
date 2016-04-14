@@ -13,7 +13,7 @@ package com.relay.data
  * @author jsflax on 3/30/16.
  */
 data class User(val map: Map<String, Any?>) {
-    constructor(id: Long,
+    constructor(id: Int,
                 name: String,
                 avatarUrl: String,
                 token: String) :
@@ -24,7 +24,7 @@ data class User(val map: Map<String, Any?>) {
         "token" to token
     ))
 
-    val id: Long by map
+    val id: Int by map
     val name: String by map
     val avatarUrl: String by map
     val token: String by map

@@ -10,4 +10,7 @@
     <string name="you_must_join_a_channel">you must join a channel to chat</string>
     <string name="see_channels">see channels</string>
     <string name="write_a_message">write a message</string>
+    <string name="name">name</string>
+    <string name="description">description</string>
+    <string name="create_channel">create channel</string>
 </resources>

@@ -32,6 +32,12 @@ class UserSomeFragment: Fragment() {
                 val avatarImage =
                     (view?.findViewById(R.id.avatar_image) as SimpleDraweeView)
 
+                view?.findViewById(
+                    R.id.button_select_avatar
+                )?.setOnClickListener {
+                    ReduxStore.dispatch(Action.ShowAvatars)
+                }
+
                 username.text = user?.name?:""
                 avatarImage.setImageURI(
                     Uri.parse(user?.avatarUrl)

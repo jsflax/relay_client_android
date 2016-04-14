@@ -1,6 +1,7 @@
 package com.relay.service
 
 import com.relay.data.Channel
+import com.relay.data.ChannelCreateRequest
 import com.relay.data.SimpleUuid
 import com.relay.service.base.*
 
@@ -11,6 +12,15 @@ object Channels {
     fun get(): Payload<List<Channel>> {
         return Dispatch.sendRequest("/channels", GET()) {
             it.data?.asJsonArray?.map { Channel(toMap(it.asJsonObject)) }
+        }
+    }
+
+    fun create(createRequest: ChannelCreateRequest): Payload<Channel> {
+        return Dispatch.sendRequest("/channels", PUT(
+            createRequest.map,
+            ContentType.APPLICATION_JSON
+        )) {
+            Channel(toMap(it.data?.asJsonObject!!))
         }
     }
 
