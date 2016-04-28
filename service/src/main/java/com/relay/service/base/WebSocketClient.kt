@@ -33,7 +33,7 @@ class WebSocketClient(private val path: String,
 
     init {
         mParser = HybiParser(this)
-        mURI = URI.create("wss://${RelayService.config?.host}$path")
+        mURI = URI.create("ws://${RelayService.config?.host}$path")
     }
 
     fun connect() {
@@ -90,7 +90,9 @@ class WebSocketClient(private val path: String,
 
                 while (line != null && !line.isEmpty()) {
                     val header = parseHeader(line)
-                    if (header.name.equals("Sec-WebSocket-Accept")) {
+                    if (header.name.toLowerCase().equals(
+                        "sec-websocket-accept"
+                    )) {
                         val expected = createSecretValidation(secret)
                         val actual = header.value.trim()
 

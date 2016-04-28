@@ -28,7 +28,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textColor="@android:color/white"
-                android:text="@string/log_in"/>
+                android:text="@string/log_in"
+                style="@style/CustomButton"/>
 
             <Button
                 android:id="@+id/sign_up"
@@ -37,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="@string/sign_up"/>
+                android:text="@string/sign_up"
+                style="@style/CustomButton"/>
         </RelativeLayout>
     </LinearLayout>
 

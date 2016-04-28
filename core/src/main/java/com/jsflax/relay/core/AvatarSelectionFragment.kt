@@ -16,6 +16,10 @@ import com.relay.service.Assets
  * @author jasonflax on 4/3/16.
  */
 class AvatarSelectionFragment : DialogFragment() {
+    init {
+        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+    }
+
     /**
      * Overridden to set display width of the dialog, which is too small
      * natively.

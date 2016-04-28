@@ -69,7 +69,7 @@ class AvatarAdapter(val assets: List<Asset>,
 
     override fun getItem(position: Int): Any? = assets[position]
 
-    override fun getViewTypeCount(): Int = 0
+    override fun getViewTypeCount(): Int = 1
 
     override fun isEnabled(position: Int): Boolean = true
 

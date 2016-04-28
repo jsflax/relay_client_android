@@ -3,6 +3,7 @@ package com.relay.service.base
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL
+import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
 import kotlin.collections.forEach
 import kotlin.printStackTrace
@@ -60,7 +61,7 @@ class Http(val url: String) {
 
                 val os = httpUrlConnection?.outputStream
 
-                os?.write(params.toByteArray(StandardCharsets.UTF_8))
+                os?.write(params.toByteArray(Charset.forName("UTF-8")))
                 os?.flush()
                 os?.close()
             } catch (e: IOException) {

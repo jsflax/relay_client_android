@@ -66,14 +66,10 @@ class MasterActivity : AppCompatActivity() {
     /**
      * Commit sign up fragment to stack
      */
-    fun addSignUpFragment() {
-        supportActionBar?.title = "sign up"
-
-        supportFragmentManager
-            .beginTransaction()
-            .setCustomAnimations(R.anim.anim_fade_in, R.anim.anim_fade_out)
-            .add(R.id.content, UserSignUpFragment(), "content")
-            .commit()
+    fun showSignUpFragment() {
+        UserSignUpFragment().show(
+            supportFragmentManager, "sign_up"
+        )
     }
 
     /**
@@ -151,7 +147,7 @@ class MasterActivity : AppCompatActivity() {
                 Action.LogOut -> {
                 }
                 Action.BeginLogIn -> addLogInFragment()
-                Action.BeginSignUp -> addSignUpFragment()
+                Action.BeginSignUp -> showSignUpFragment()
                 Action.ExecuteLogIn, Action.ExecuteSignUp -> renderUserTab()
                 Action.Subscribe -> {
                     renderChatTab()

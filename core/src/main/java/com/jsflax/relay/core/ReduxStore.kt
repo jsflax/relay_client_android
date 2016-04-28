@@ -268,11 +268,13 @@ object ReduxStore {
                     else -> state
                 }
             }
-            Action.ExecuteCreateChannel -> dispatch(
-                Action.Subscribe, action.associatedData
-            )
-        // logging in or signing up increments the state to a
-        // logged in state
+            Action.ExecuteCreateChannel -> when (state) {
+                State.NotSubscribedAndLoggedIn,
+                State.NotSubscribedAndNotLoggedIn -> state = state.hop()
+                else -> state
+            }
+            // logging in or signing up increments the state to a
+            // logged in state
             Action.ExecuteLogIn, Action.ExecuteSignUp -> {
                 if (action.associatedData is User) {
                     user = action.associatedData as User

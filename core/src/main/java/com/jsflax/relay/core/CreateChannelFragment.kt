@@ -2,15 +2,10 @@ package com.jsflax.relay.core
 
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import com.jsflax.relay.ui.ChannelAdapter
-import com.relay.data.Channel
 import com.relay.data.ChannelCreateRequest
 import com.relay.service.Channels
 
@@ -22,6 +17,10 @@ import com.relay.service.Channels
  * @author jasonflax on 4/2/16.
  */
 class CreateChannelFragment : DialogFragment() {
+    init {
+        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+
+    }
 
     override fun onCreateView(inflater: LayoutInflater?,
                               container: ViewGroup?,

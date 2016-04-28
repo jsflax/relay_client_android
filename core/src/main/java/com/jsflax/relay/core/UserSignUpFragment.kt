@@ -2,7 +2,7 @@ package com.jsflax.relay.core
 
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,11 @@ import com.relay.service.Users
 /**
  * @author jasonflax on 4/3/16.
  */
-class UserSignUpFragment : Fragment() {
+class UserSignUpFragment : DialogFragment() {
+    init {
+        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+    }
+
     override fun onCreateView(inflater: LayoutInflater?,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

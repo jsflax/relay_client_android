@@ -64,14 +64,14 @@ class ChatSomeFragment : Fragment() {
                 imagePipeline.fetchDecodedImage(
                     ImageRequestBuilder.newBuilderWithSource(
                         Uri.parse(emoticon?.url)).build(), context
-                ).subscribe(object: DataSubscriber<CloseableReference<CloseableImage>> {
+                ).subscribe(object : DataSubscriber<CloseableReference<CloseableImage>> {
                     override fun onNewResult(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
                         val image = dataSource?.result?.get()
 
                         if (image is CloseableBitmap) {
                             // do something with the bitmap
 
-                            val bitmap =  Bitmap.createScaledBitmap(
+                            val bitmap = Bitmap.createScaledBitmap(
                                 image.underlyingBitmap,
                                 image.underlyingBitmap.width * 2,
                                 image.underlyingBitmap.height * 2,
@@ -288,25 +288,26 @@ class ChatSomeFragment : Fragment() {
                 messageEditText.text.clear()
             }
 
-            ReduxStore.subscribe { action ->
+            ReduxStore.subscribe("ChatSomeFragment", { action ->
                 when (action) {
                     Action.ReceiveMessage -> {
-                            generateSpannableStringFromMessageResponse(
-                                context,
-                                action.associatedData as MessageResponse,
-                                ReduxStore.emoticons
-                            ) { spannable ->
-                                activity?.runOnUiThread {
-                                    adapter.addMessage(
-                                        action.associatedData as MessageResponse to
-                                            spannable
-                                    )
-                                }
+                        generateSpannableStringFromMessageResponse(
+                            context,
+                            action.associatedData as MessageResponse,
+                            ReduxStore.emoticons
+                        ) { spannable ->
+                            activity?.runOnUiThread {
+                                adapter.addMessage(
+                                    action.associatedData as MessageResponse to
+                                        spannable
+                                )
                             }
+                        }
                     }
-                    else -> {}
+                    else -> {
+                    }
                 }
-            }
+            })
         }
 
         return view
