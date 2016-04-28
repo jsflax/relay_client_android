@@ -50,70 +50,80 @@ class ChatSomeFragment : Fragment() {
             var i = 0
             var j = 0
 
-            parseEmoteRegex.findAll(messageResponse.strippedContent).forEach {
-                val emoticon = emoticons.find {
-                    it.shortcut.equals(messageResponse.emoticons[i])
+            if (parseEmoteRegex.findAll(messageResponse.strippedContent)
+                .firstOrNull() == null) {
+                callback.invoke(spannableString)
+            } else {
+                parseEmoteRegex.findAll(messageResponse.strippedContent).forEach {
+                    val emoticon = emoticons.find {
+                        it.shortcut.equals(messageResponse.emoticons[i])
+                    }
+
+                    println(spannableString)
+
+                    println(it.range)
+                    i++
+
+                    if (emoticon == null) {
+                        if (i == messageResponse.emoticons.size) {
+                            callback.invoke(spannableString)
+                        }
+                    } else {
+                        val imagePipeline = Fresco.getImagePipeline()
+                        imagePipeline.fetchDecodedImage(
+                            ImageRequestBuilder.newBuilderWithSource(
+                                Uri.parse(emoticon?.url)).build(), context
+                        ).subscribe(object : DataSubscriber<CloseableReference<CloseableImage>> {
+                            override fun onNewResult(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
+                                val image = dataSource?.result?.get()
+
+                                if (image is CloseableBitmap) {
+                                    // do something with the bitmap
+
+                                    val bitmap = Bitmap.createScaledBitmap(
+                                        image.underlyingBitmap,
+                                        image.underlyingBitmap.width * 2,
+                                        image.underlyingBitmap.height * 2,
+                                        true
+                                    )
+
+                                    val imageSpan = ImageSpan(
+                                        context,
+                                        bitmap
+                                    )
+
+                                    spannableString.setSpan(
+                                        imageSpan,
+                                        it.range.start,
+                                        it.range.last + 1,
+                                        SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
+                                    )
+
+                                    j++
+
+                                    if (j == messageResponse.emoticons.size) {
+                                        callback.invoke(spannableString)
+                                    }
+                                }
+
+                            }
+
+                            override fun onCancellation(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
+                                j++
+                            }
+
+                            override fun onProgressUpdate(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
+                            }
+
+                            override fun onFailure(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
+                                j++
+                            }
+                        }, AsyncTask.SERIAL_EXECUTOR);
+                    }
                 }
 
                 println(spannableString)
-
-                println(it.range)
-                i++
-
-                val imagePipeline = Fresco.getImagePipeline()
-                imagePipeline.fetchDecodedImage(
-                    ImageRequestBuilder.newBuilderWithSource(
-                        Uri.parse(emoticon?.url)).build(), context
-                ).subscribe(object : DataSubscriber<CloseableReference<CloseableImage>> {
-                    override fun onNewResult(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
-                        val image = dataSource?.result?.get()
-
-                        if (image is CloseableBitmap) {
-                            // do something with the bitmap
-
-                            val bitmap = Bitmap.createScaledBitmap(
-                                image.underlyingBitmap,
-                                image.underlyingBitmap.width * 2,
-                                image.underlyingBitmap.height * 2,
-                                true
-                            )
-
-                            val imageSpan = ImageSpan(
-                                context,
-                                bitmap
-                            )
-
-                            spannableString.setSpan(
-                                imageSpan,
-                                it.range.start,
-                                it.range.last + 1,
-                                SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
-                            )
-
-                            j++
-
-                            if (j == messageResponse.emoticons.size) {
-                                callback.invoke(spannableString)
-                            }
-                        }
-
-                    }
-
-                    override fun onCancellation(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
-                        j++
-                    }
-
-                    override fun onProgressUpdate(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
-                    }
-
-                    override fun onFailure(dataSource: DataSource<CloseableReference<CloseableImage>>?) {
-                        j++
-                    }
-                }, AsyncTask.SERIAL_EXECUTOR);
             }
-
-
-            println(spannableString)
         }
     }
 
@@ -189,11 +199,6 @@ class ChatSomeFragment : Fragment() {
                                            start: Int,
                                            before: Int,
                                            count: Int) {
-                    Log.d(
-                        "TextWatcher",
-                        "seq: $s start: $start before: $before count: $count"
-                    )
-
                     ReduxStore.subscribe("emoticonWatcher", {
                         when (it) {
                             Action.SelectedEmoticon -> {
@@ -219,18 +224,10 @@ class ChatSomeFragment : Fragment() {
                             // if started a new character sequence
                             // else continuing in the current one
                             if (s?.get(start) == '(') {
-                                Log.d(
-                                    "TextWatcher",
-                                    "entering emoticon state"
-                                )
                                 addEmoticonFragment()
                                 inEmoticonState = true
                                 emoticonStart = start + 1
                             } else if (s?.get(start) == ')') {
-                                Log.d(
-                                    "TextWatcher",
-                                    "exiting emoticon state"
-                                )
                                 removeEmoticonFragment()
                                 inEmoticonState = false
                             } else if (inEmoticonState) {
@@ -255,13 +252,10 @@ class ChatSomeFragment : Fragment() {
                                                start: Int,
                                                count: Int,
                                                after: Int) {
-                    Log.w("TextWatcher", "seq: $s start: $start after: $after count: $count")
-
                     // if we've deleted a character
                     if (after < count) {
                         if (inEmoticonState) {
                             if (s?.get(start) == '(') {
-                                Log.d("TextWatcher", "exiting emoticon state")
                                 removeEmoticonFragment()
                                 inEmoticonState = false
                             }
@@ -271,6 +265,12 @@ class ChatSomeFragment : Fragment() {
             })
 
             recyclerView.adapter = adapter
+
+            view?.findViewById(R.id.button_emoticon)?.setOnClickListener {
+                if (getEmoticonFragment() == null) {
+                    addEmoticonFragment()
+                }
+            }
 
             view?.findViewById(R.id.send)?.setOnClickListener {
                 ReduxStore.dispatch(
