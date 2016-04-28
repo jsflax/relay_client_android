@@ -25,11 +25,10 @@ object RelayService {
 
     fun init(host: String) {
         config = Config(host)
+    }
 
-        Thread {
-            // ping host
-            Dispatch.sendRequest<Any>("", GET()) {}
-        }
+    fun ping() {
+        Dispatch.sendRequest<Any>("/", GET()) {}
     }
 
     val channels = Channels

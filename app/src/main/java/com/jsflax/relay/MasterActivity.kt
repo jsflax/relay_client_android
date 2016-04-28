@@ -8,6 +8,7 @@ import android.view.MenuItem
 import com.google.gson.Gson
 import com.jsflax.relay.core.*
 import com.relay.data.MessageRequest
+import com.relay.service.RelayService
 
 class MasterActivity : AppCompatActivity() {
     companion object {
@@ -128,6 +129,11 @@ class MasterActivity : AppCompatActivity() {
 
         // set content view to top level layout
         setContentView(R.layout.activity_splash)
+
+        Thread {
+            // ping host
+            RelayService.ping()
+        }.start()
 
         // set the action bar
         val toolbar = findViewById(R.id.toolbar) as Toolbar?
