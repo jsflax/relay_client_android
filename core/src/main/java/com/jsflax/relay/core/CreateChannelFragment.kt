@@ -50,6 +50,12 @@ class CreateChannelFragment : DialogFragment() {
                             Action.ExecuteCreateChannel, it.parcel
                         )
                     }
+                } else {
+                    showErrorDialog(
+                        context,
+                        "error",
+                        "must enter a name"
+                    )
                 }
             }
         }

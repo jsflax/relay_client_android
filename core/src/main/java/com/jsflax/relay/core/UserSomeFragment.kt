@@ -40,7 +40,7 @@ class UserSomeFragment: Fragment() {
 
                 username.text = user?.name?:""
                 avatarImage.setImageURI(
-                    Uri.parse(user?.avatarUrl)
+                    Uri.parse("http://" + RelayService.config?.host + user?.avatarUrl)
                 )
             }
         } else {
