@@ -1,6 +1,9 @@
 # relay_client_android
 Hipchat inspired IRC client
 
+Keep in mind that this is running on Heroku for free so it may take a few
+minutes to boot up!
+
 ## Messaging
 
 Messages are sent up as raw content and parsed serverside.
